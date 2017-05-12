@@ -15,9 +15,9 @@
 #include <isl/ctx.h>
 #include <isl_config.h>
 
-static struct isl_arg help_arg[] = {
-ISL_ARG_PHANTOM_BOOL('h', "help", NULL, "print this help, then exit")
-};
+static struct isl_arg *help_arg; //= {
+//ISL_ARG_PHANTOM_BOOL('h', "help", NULL, "print this help, then exit")
+//};
 
 static void set_default_choice(struct isl_arg *arg, void *opt)
 {

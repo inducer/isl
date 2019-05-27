@@ -3936,6 +3936,7 @@ __isl_give isl_term *isl_upoly_foreach_term(__isl_keep struct isl_upoly *up,
 		if (!term)
 			goto error;
 	}
+	term = isl_term_cow(term);
 	term->pow[up->var] = 0;
 
 	return term;

@@ -28,6 +28,20 @@
 #include <set_to_map.c>
 #include <set_from_map.c>
 
+
+#include <intrin.h>
+#pragma intrinsic(_BitScanForward)
+static int
+ffs (int x)
+{
+    unsigned long i;
+    if (_BitScanForward(&i, x) != 0)
+	return i + 1;
+    return 0;
+}
+
+
+
 static void swap_equality(struct isl_basic_map *bmap, int a, int b)
 {
 	isl_int *t = bmap->eq[a];

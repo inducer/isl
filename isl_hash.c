@@ -12,6 +12,18 @@
 #include <isl/ctx.h>
 #include "isl_config.h"
 
+#include <intrin.h>
+#pragma intrinsic(_BitScanForward)
+static int
+ffs (int x)
+{
+    unsigned long i;
+    if (_BitScanForward(&i, x) != 0)
+	return i + 1;
+    return 0;
+}
+
+
 uint32_t isl_hash_string(uint32_t hash, const char *s)
 {
 	for (; *s; s++)

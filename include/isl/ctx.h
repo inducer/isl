@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define __attribute__(...)
+
 #include <isl/arg.h>
 
 #ifndef __isl_give
